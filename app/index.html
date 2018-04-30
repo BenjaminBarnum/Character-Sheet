@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="bigGrid">
+	<div id="highLevel">
+		<div class="logo">[logo]</div>
+		<div class="class">
+			<label>Class &amp; Level</label>
+			<input name="class"/>
+		</div>
+		<div class="background">
+			<label>Background</label>
+			<input name="background"/>
+		</div>
+		<div class="playerName">
+			<label>Player Name</label>
+			<input name="playerName"/>
+		</div>
+		<div class="faction">
+			<label>Faction</label>
+			<input name="faction"/>
+		</div>
+		<div class="name">
+			<label>Character Name</label>
+			<input name="name"/>
+		</div>
+		<div class="race">
+			<label>Race</label>
+			<input name="race"/>
+		</div>
+		<div class="alignment">
+			<label>Alignment</label>
+			<input name="alignment"/>
+		</div>
+		<div class="xp">
+			<label>XP</label>
+			<input name="xp"/>
+		</div>
+		<div class="dciNumber">
+			<label>DCI Number</label>
+			<input name="dciNumber"/>
+		</div>
+	</div>
+	<div id="stats">
+		<div class="stat"><label>Str</label><input class="actual" value="17" name="strActual"><input class="modifier" value="+2" name="strModifier"></div>
+		<div class="stat"><label>Dex</label><input class="actual" name="dexActual"><input class="modifier" name="dexModifier"></div>
+		<div class="stat"><label>Con</label><input class="actual" name="conActual"><input class="modifier" name="conModifier"></div>
+		<div class="stat"><label>Int</label><input class="actual" name="intActual"><input class="modifier" name="intModifier"></div>
+		<div class="stat"><label>Wis</label><input class="actual" name="wisActual"><input class="modifier" name="wisModifier"></div>
+		<div class="stat"><label>Chr</label><input class="actual" name="chrActual"><input class="modifier" name="chrModifier"></div>
+	</div>
+	<div id="savesSkills">
+		<div class="input-group label-on-right" id="inspiration">
+			<label>Inspiration</label>
+			<input name="inspiration"/>
+		</div>
+		<div class="input-group label-on-right" id="proficiencyBonus">
+			<label>Proficiency Bonus</label>
+			<input name="proficiencyBonus"/>
+		</div>
+		<fieldset id="savingThrows" class="tinyThings">
+			<legend>Saving Throws</legend>
+			<ul>
+				<li><input type="number" name="savingValueStr"/><label>STR</label></li>
+				<li><input type="number" name="savingValueDex"/><label>DEX</label></li>
+				<li><input type="number" name="savingValueCon"/><label>CON</label></li>
+				<li><input type="number" name="savingValueInt"/><label>INT</label></li>
+				<li><input type="number" name="savingValueWis"/><label>WIS</label></li>
+				<li><input type="number" name="savingValueChr"/><label>CHR</label></li>
+			</ul>
+		</fieldset>
+		<fieldset id="skills" class="tinyThings">
+			<legend>Skills</legend>
+			<ul>
+				<li><input type="number" name="savingValueStr"/><label>zzz</label></li>
+				<li><input type="number" name="savingValueDex"/><label>zzz</label></li>
+				<li><input type="number" name="savingValueCon"/><label>zzz</label></li>
+				<li><input type="number" name="savingValueInt"/><label>zzz</label></li>
+				<li><input type="number" name="savingValueWis"/><label>zzz</label></li>
+				<li><input type="number" name="savingValueChr"/><label>zzz</label></li>
+			</ul>
+		</fieldset>
+	</div>
+	<!--test -->
+	<div id="acHp">
+		<div class="stat ac"><label for="ac">Armor Class</label><input class="actual" id="ac" name="ac"/></div>
+		<div class="stat initiative"><label for="initiative">Initiative</label><input class="actual" id="initiative" name="initiative"/></div>
+		<div class="stat speed"><label for="speed">Speed</label><input class="actual" id="speed" name="speed"/></div>
+		<div class="stat currentHP"><label for="currentHP">Current Hit Points</label><input class="actual" id="currentHP" name="currentHP"/></div>
+		<div class="stat temporaryHP"><label for="temporaryHP">Temporary Hit Points</label><input class="actual" id="temporaryHP" name="temporaryHP"/></div>
+		<div class="stat hitDice"><label for="hitDice">Hit Dice</label><input class="actual" id="hitDice" name="hitDice"/></div>
+		<div class="stat deathSaves"><label for="deathSaves">Death Saves</label><input class="actual" id="deathSaves" name="deathSaves"/> <!-- TODO use count-to-three buttons --></div>
+	</div>
+	<div id="traitsIdeals">
+		<div class="label-on-bottom PersonalityTraits"><label>PersonalityTraits</label><textarea class="actual" name="PersonalityTraits"></textarea></div>
+		<div class="label-on-bottom ideals"><label>ideals</label><textarea class="actual" name="ideals"></textarea></div>
+		<div class="label-on-bottom bonds"><label>bonds</label><textarea class="actual" name="bonds"></textarea></div>
+		<div class="label-on-bottom flaws"><label>flaws</label><textarea class="actual" name="flaws"></textarea></div>
+	</div>
+	<div id="attacksSpells">Attacks &amp; spellcasting</div>
+	<div id="features">Features &amp; traits</div>
+	<div id="passiveWisdomPerception">passive wisdom perception</div>
+	<div id="equipment">Equipment</div>
+	<div id="otherProficiencies">Other proficiencies &amp; languages</div>
+</div>
+<script src="scripts/app.js"></script>
+</body>
+</html>
