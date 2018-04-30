@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+div#bigGrid > div {
+	grid-template-areas: "name ";
+	box-sizing: border-box;
+	padding: 3px;
+}
+
+input {
+	text-align: center;
+}
+
+label {
+	text-transform: uppercase;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// DUMMY STUFF
+///////////////////////////////////////////////////////////////////////////
+*/
+div#bigGrid {
+	/*border: 1px solid red;*/
+}
+div#bigGrid > div {
+	/*border: 1px solid green;*/
+}
+
+
+
+@media screen {
+	div#bigGrid {
+		display: grid;
+		grid-template-rows: auto auto auto 1fr;
+		grid-template-columns: auto 1fr auto 2fr;
+	}
+
+	div#highLevel {
+		/*grid-column: 1 / span 4;*/
+		grid-area: 1 / 1 / 1 / -1;
+		display:grid;
+		grid-template-columns: repeat(5, auto)
+	}
+
+	div#highLevel > div {
+		position: relative;
+	}
+	div#highLevel > div > label {
+		position: absolute;
+		bottom: 0;
+		z-index:-1;
+		font-size:80%;
+		color:#ccc;
+	}
+	div#highLevel input {
+		text-align: left;
+		margin-bottom:1.4em; /* space for label below */
+		width:100%;
+	}
+
+	div#stats {
+		grid-row: span 2;
+	}
+
+	div#savesSkills {
+		grid-row: span 2;
+	}
+
+	div#acHp {
+		display:grid;
+		grid-template-columns: repeat(4, auto);
+	}
+	div#acHp > div {
+		margin: 0 3px;
+	}
+	div#acHp > div.initiative {
+		grid-column: span 2;
+	}
+	div#acHp > div.currentHP, div#acHp > div.temporaryHP {
+		grid-column: span 4;
+		width:100%;
+	}
+
+	div#acHp > div.hitDice, div#acHp > div.deathSaves {
+		grid-column: span 2;
+		width:100%;
+	}
+
+	div#traitsIdeals {
+	}
+	div#traitsIdeals > div.stat {
+		width:100%;
+		min-width:22em;
+	}
+	div#traitsIdeals > div.stat > textarea {
+		font-size:0.8rem;
+	}
+
+
+	div#attacksSpells {
+	}
+
+	div#features {
+		grid-row: span 3;
+	}
+
+	div#passiveWisdomPerception {
+		grid-column: span 2;
+	}
+
+	div#otherProficiencies {
+		grid-column: span 2;
+	}
+
+	div#equipment {
+		grid-row: span 2;
+	}
+
+	/*
+	///////////////////////////////////////////////////////////////////////////
+	// STATS
+	///////////////////////////////////////////////////////////////////////////
+	*/
+	div.stat {
+		border: 1px solid black;
+		width: 48px;
+		height: 64px;
+		position: relative;
+		margin: 3px 3px 12px;
+	}
+
+	div.stat > label {
+		position: absolute;
+		top: 5px;
+		display: block;
+		width: 100%;
+		text-align: center;
+		z-index: 9; /* above the input */
+		font-size: .5rem;
+	}
+
+	div.stat > .actual {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border: none;
+		font-size: 1.5rem;
+	}
+
+	div.stat > .modifier {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 32px;
+		height: 20px;
+		border: 1px solid black;
+		border-radius: 50%;
+		bottom: -10px;
+	}
+
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// LABEL-ON-BOTTOM
+///////////////////////////////////////////////////////////////////////////
+*/
+.label-on-bottom {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+}
+
+.label-on-bottom > input, .label-on-bottom > textarea {
+	flex: initial;
+}
+
+.label-on-bottom > label {
+	flex: auto;
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// LABEL-ON-RIGHT
+///////////////////////////////////////////////////////////////////////////
+*/
+.label-on-right {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+}
+
+.label-on-right > input {
+	flex: initial;
+	width: 30px;
+	height: 30px;
+}
+
+.label-on-right > label {
+	border: 1px solid black;
+	flex: auto;
+	border-radius: 0 7px 7px 0;
+}
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// SAVING THROWS
+///////////////////////////////////////////////////////////////////////////
+*/
+.tinyThings {
+	border: 1px solid black;
+	border-radius: 7px;
+}
+
+.tinyThings ul {
+	list-style: none;
+	margin: 0;
+	padding:.3em;
+}
+
+.tinyThings input[type="number"] {
+	width: 3em;
+}
